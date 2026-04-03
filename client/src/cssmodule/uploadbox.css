@@ -1,40 +1,42 @@
-/* ============================================================
-   Upload Box Styles (uploadbox.css)
-   ============================================================ */
-
 .upload {
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
 }
-
 .upload__dropzone {
   position: relative;
-  border: 2px dashed var(--color-border-hover);
+
+  border: 2px dashed #d1d1d1;
   border-radius: var(--radius-lg);
   padding: var(--space-16) var(--space-8);
   text-align: center;
-  background: var(--color-bg-glass);
-  backdrop-filter: var(--glass-backdrop);
-  -webkit-backdrop-filter: var(--glass-backdrop);
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
   transition: all var(--transition-base);
   overflow: hidden;
 }
 
 .upload__dropzone::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: var(--gradient-surface);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
   opacity: 0;
   transition: opacity var(--transition-base);
   pointer-events: none;
 }
 
 .upload__dropzone:hover {
-  border-color: var(--color-accent);
-  background: var(--color-bg-glass-hover);
+  border-color: #888;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .upload__dropzone:hover::before {
@@ -42,10 +44,11 @@
 }
 
 .upload__dropzone--active {
-  border-color: var(--color-accent);
+  border-color: #555;
   border-style: solid;
-  background: var(--color-accent-subtle);
-  box-shadow: 0 0 40px var(--color-accent-glow);
+  background: rgba(0, 0, 0, 0.05);
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .upload__dropzone--active::before {
@@ -58,17 +61,24 @@
   height: 72px;
   margin: 0 auto var(--space-6);
   border-radius: var(--radius-lg);
-  background: var(--gradient-primary);
+
+  background: #2d2d2d;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 24px var(--color-accent-glow);
-  transition: transform var(--transition-spring), box-shadow var(--transition-base);
-}
 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform var(--transition-spring),
+    box-shadow var(--transition-base);
+}
 .upload__dropzone:hover .upload__icon-wrapper {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 32px var(--color-accent-glow);
+  background: #3d3d3d;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .upload__icon {
@@ -94,20 +104,27 @@
   display: inline-block;
   padding: var(--space-2) var(--space-6);
   border-radius: var(--radius-full);
-  background: var(--gradient-primary);
+
+  background: #2d2d2d;
+
   color: white;
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.01em;
   transition: all var(--transition-base);
-  box-shadow: 0 2px 12px var(--color-accent-glow);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
 }
 
 .upload__browse-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px var(--color-accent-glow);
-}
+  background: #444;
 
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 .upload__constraints {
   margin-top: var(--space-3);
   font-size: 0.75rem;
@@ -184,14 +201,15 @@
   border-color: var(--color-error);
   color: var(--color-error);
 }
-
 /* Submit button */
 .upload__submit {
   width: 100%;
   margin-top: var(--space-4);
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-md);
-  background: var(--gradient-primary);
+
+  background: #2d2d2d;
+
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -201,22 +219,30 @@
   justify-content: center;
   gap: var(--space-3);
   transition: all var(--transition-base);
-  box-shadow: 0 4px 20px var(--color-accent-glow);
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.4s var(--transition-base);
+  cursor: pointer;
 }
 
 .upload__submit:hover:not(:disabled) {
+  background: #3d3d3d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--color-accent-glow);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 .upload__submit:active:not(:disabled) {
   transform: translateY(0);
+  background: #222;
 }
 
 .upload__submit:disabled {
+  background: #cccccc;
+  color: #888888;
   opacity: 0.6;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 /* Error message */

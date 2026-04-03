@@ -12,7 +12,9 @@
   backdrop-filter: var(--glass-backdrop);
   -webkit-backdrop-filter: var(--glass-backdrop);
   border-bottom: 1px solid var(--color-border);
-  transition: background var(--transition-base), border-color var(--transition-base);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .navbar__inner {
@@ -34,15 +36,27 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: var(--gradient-primary);
+
+  background: #2d2d2d;
+
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+
   font-weight: 700;
   font-size: 0.9rem;
-  box-shadow: 0 0 20px var(--color-accent-glow);
-  transition: transform var(--transition-spring), box-shadow var(--transition-base);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform var(--transition-spring),
+    box-shadow var(--transition-base);
+}
+
+.navbar__logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navbar__brand:hover .navbar__logo {

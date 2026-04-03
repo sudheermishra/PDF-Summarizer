@@ -61,18 +61,15 @@ function Home() {
     <main className="home" id="home-page">
       {/* Hero Section */}
       <section className="home__hero">
-        <h1 className="home__title">
-          Summarize any PDF{" "}
-          <span className="home__title-gradient">in seconds</span>
-        </h1>
+        <h1 className="home__title">Summarize any PDF</h1>
         <p className="home__description">
           Upload your PDF document and let our AI-powered engine extract the key
           insights and generate a concise, readable summary instantly.
         </p>
 
         {/* Feature pills */}
-        <div className="home__features">
-          <div className="home__feature">
+        {/* <div className="home__features">
+          <div className="home__feature">//
             <span>Lightning Fast</span>
           </div>
           <div className="home__feature">
@@ -81,7 +78,7 @@ function Home() {
           <div className="home__feature">
             <span>Accurate Results</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Upload or Summary */}
